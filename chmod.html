@@ -1,0 +1,213 @@
+<script>
+function s(i,v){
+	var s = document.getElementById("s").value;
+	s = s.substr(0,i)+v+s.substr(i+1);
+	document.getElementById("s").value=s;
+}
+function calculate(c){
+	if (c!=0){
+		document.getElementById("s").value='----------';
+	}
+	// owner
+	var owre = 0;
+	var owwr = 0;
+	var owex = 0;
+	if (document.getElementById("owre").checked==true){
+		owre = 4;
+		s(1,'r');
+	}
+	if (document.getElementById("owwr").checked==true){
+		owwr = 2;
+		s(2,'w');
+	}
+	if (document.getElementById("owex").checked==true){
+		owex = 1;
+		s(3,'x');
+	}
+	document.getElementById("owner").value=owre+owwr+owex;
+	// group
+	var grre = 0;
+	var grwr = 0;
+	var grex = 0;
+	if (document.getElementById("grre").checked==true){
+		grre = 4;
+		s(4,'r');
+	}
+	if (document.getElementById("grwr").checked==true){
+		grwr = 2;
+		s(5,'w');
+	}
+	if (document.getElementById("grex").checked==true){
+		grex = 1;
+		s(6,'x');
+	}
+	document.getElementById("group").value=grre+grwr+grex;
+	// other
+	var otre = 0;
+	var otwr = 0;
+	var otex = 0;
+	if (document.getElementById("otre").checked==true){
+		otre = 4;
+		s(7,'r');
+	}
+	if (document.getElementById("otwr").checked==true){
+		otwr = 2;
+		s(8,'w');
+	}
+	if (document.getElementById("otex").checked==true){
+		otex = 1;
+		s(9,'x');
+	}
+	document.getElementById("other").value=otre+otwr+otex;
+}
+function calculate2(){
+	document.getElementById("s").value='----------';
+	// owner
+	if (document.getElementById("owner").value==4||document.getElementById("owner").value==6||document.getElementById("owner").value==5||document.getElementById("owner").value==7){
+		document.getElementById("owre").checked=true;
+		s(1,'r');
+	}else{
+		document.getElementById("owre").checked=false;
+	}
+	if (document.getElementById("owner").value==2||document.getElementById("owner").value==6||document.getElementById("owner").value==3||document.getElementById("owner").value==7){
+		document.getElementById("owwr").checked=true;
+		s(2,'w');
+	}else{
+		document.getElementById("owwr").checked=false;
+	}
+	if (document.getElementById("owner").value==1||document.getElementById("owner").value==3||document.getElementById("owner").value==5||document.getElementById("owner").value==7){
+		document.getElementById("owex").checked=true;
+		s(3,'x');
+	}else{
+		document.getElementById("owex").checked=false;
+	}
+	// group
+	if (document.getElementById("group").value==4||document.getElementById("group").value==6||document.getElementById("group").value==5||document.getElementById("group").value==7){
+		document.getElementById("grre").checked=true;
+		s(4,'r');
+	}else{
+		document.getElementById("grre").checked=false;
+	}
+	if (document.getElementById("group").value==2||document.getElementById("group").value==6||document.getElementById("group").value==3||document.getElementById("group").value==7){
+		document.getElementById("grwr").checked=true;
+		s(5,'w');
+	}else{
+		document.getElementById("grwr").checked=false;
+	}
+	if (document.getElementById("group").value==1||document.getElementById("group").value==3||document.getElementById("group").value==5||document.getElementById("group").value==7){
+		document.getElementById("grex").checked=true;
+		s(6,'x');
+	}else{
+		document.getElementById("grex").checked=false;
+	}
+	// other
+	if (document.getElementById("other").value==4||document.getElementById("other").value==6||document.getElementById("other").value==5||document.getElementById("other").value==7){
+		document.getElementById("otre").checked=true;
+		s(7,'r');
+	}else{
+		document.getElementById("otre").checked=false;
+	}
+	if (document.getElementById("other").value==2||document.getElementById("other").value==6||document.getElementById("other").value==3||document.getElementById("other").value==7){
+		document.getElementById("otwr").checked=true;
+		s(8,'w');
+	}else{
+		document.getElementById("otwr").checked=false;
+	}
+	if (document.getElementById("other").value==1||document.getElementById("other").value==3||document.getElementById("other").value==5||document.getElementById("other").value==7){
+		document.getElementById("otex").checked=true;
+		s(9,'x');
+	}else{
+		document.getElementById("otex").checked=false;
+	}
+}
+function calculate3(){
+	var str = document.getElementById("s").value;
+	// owner
+	if (str.substring(1, 2)=='r'){
+		document.getElementById("owre").checked=true;
+	}else{
+		document.getElementById("owre").checked=false;
+	}
+	if (str.substring(2, 3)=='w'){
+		document.getElementById("owwr").checked=true;
+	}else{
+		document.getElementById("owwr").checked=false;
+	}
+	if (str.substring(3, 4)=='x'){
+		document.getElementById("owex").checked=true;
+	}else{
+		document.getElementById("owex").checked=false;
+	}
+	// group
+	if (str.substring(4, 5)=='r'){
+		document.getElementById("grre").checked=true;
+	}else{
+		document.getElementById("grre").checked=false;
+	}
+	if (str.substring(5, 6)=='w'){
+		document.getElementById("grwr").checked=true;
+	}else{
+		document.getElementById("grwr").checked=false;
+	}
+	if (str.substring(6, 7)=='x'){
+		document.getElementById("grex").checked=true;
+	}else{
+		document.getElementById("grex").checked=false;
+	}
+	// other
+	if (str.substring(7, 8)=='r'){
+		document.getElementById("otre").checked=true;
+	}else{
+		document.getElementById("otre").checked=false;
+	}
+	if (str.substring(8, 9)=='w'){
+		document.getElementById("otwr").checked=true;
+	}else{
+		document.getElementById("otwr").checked=false;
+	}
+	if (str.substring(9, 10)=='x'){
+		document.getElementById("otex").checked=true;
+	}else{
+		document.getElementById("otex").checked=false;
+	}
+	calculate(0);
+}
+</script>
+<table bgcolor="#000000" cellpadding="5" cellspacing="1">
+<tr bgcolor="#ffffff" align="center">
+	<th colspan="4">CHMOD Calculator</th>
+</tr>
+<tr bgcolor="#ffffff" align="center">
+	<td>Permission</td>
+	<td>Owner</td>
+	<td>Group</td>
+	<td>Other</td>
+</tr>
+<tr bgcolor="#ffffff" align="center">
+	<td>Read (4)</td>
+	<td><input type="checkbox" id="owre" onclick="calculate();"></td>
+	<td><input type="checkbox" id="grre" onclick="calculate();"></td>
+	<td><input type="checkbox" id="otre" onclick="calculate();"></td>
+</tr>
+<tr bgcolor="#ffffff" align="center">
+	<td>Write (2)</td>
+	<td><input type="checkbox" id="owwr" onclick="calculate();"></td>
+	<td><input type="checkbox" id="grwr" onclick="calculate();"></td>
+	<td><input type="checkbox" id="otwr" onclick="calculate();"></td>
+</tr>
+<tr bgcolor="#ffffff" align="center">
+	<td>Execute (1)</td>
+	<td><input type="checkbox" id="owex" onclick="calculate();"></td>
+	<td><input type="checkbox" id="grex" onclick="calculate();"></td>
+	<td><input type="checkbox" id="otex" onclick="calculate();"></td>
+</tr>
+<tr bgcolor="#ffffff" align="center">
+	<td>Value</td>
+	<td><input type="text" id="owner" size="1" value="0" onkeyup="calculate2();"></td>
+	<td><input type="text" id="group" size="1" value="0" onkeyup="calculate2();"></td>
+	<td><input type="text" id="other" size="1" value="0" onkeyup="calculate2();"></td>
+</tr>
+</table><br>
+<input type="text" style="border:1px #000000 solid" id="s" value="----------" onkeyup="calculate3();">
+<p>chmod -R 750 /tmp/somedir<br>
+chown -R user:group /tmp/somedir</p>
